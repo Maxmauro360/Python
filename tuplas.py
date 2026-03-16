@@ -21,3 +21,4 @@ for banana in tabela:
   print(f'elementos:{banana}')
 
 print(sorted(tabela)) #organiza em ordem alfabetica
+print('Olá, mundo!')
