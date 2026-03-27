@@ -22,3 +22,4 @@ log = math.log10(y)
 print(log)
 print(math.factorial(x))
 print(math.pi)
+ 

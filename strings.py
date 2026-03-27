@@ -1,9 +1,10 @@
 # nome = 'Max '
 # letra = nome [1]
 # print(letra) 
-# frase = "curso de python aqui"
-# frase1 = 'MAX'
-# palavras = frase.split()
+frase = "curso de python aqui"
+nome = 'MAX'
+print(frase + ' com ' + nome)
+# palavras = frase.split() #-->cria uma lista com cada palavra a parte
 # print(palavras)
 # for letra in frase1:
 #      print(letra)
@@ -12,9 +13,13 @@
 # arroba = email.find('@') #encontra dentro da string este caracter
 #print(arroba)
 # usuario = email[0:arroba]
-# dominio = email[arroba+1:] #da proxima prosição depois do @
+# dominio = email[arroba+1:] #da proxima posição depois do @
 #print(usuario)
 #print(dominio)
+
+profissão ='Psicanalista'
+pessoa = profissão.find('Lista') # retorna -1 se nao tiver o elemento na lista
+print(pessoa)
 
 # 
 
@@ -38,13 +43,13 @@
 # print(frase.rstrip)# r de right
 # print(frase.strip) # esquerda tanto direita
 
-#alinhaento de texto pra exibiçao
+#alinhaento de texto pra exibiçao 
 
 # fruta = 'abacaxi'
 # print(fruta) #a esquerda
-# print(fruta.rjust(20)) # a direita
+# print(fruta.rjust(20)) # 20 espaços a direita
 # print(fruta.center(20)) # no centro
-# print(fruta.ljust(20, '-')) #a esquerda
+# print(fruta.ljust(20, '-')) #20 espaços a esquerda
 # print(fruta.center(20,"-"))
 
 p = 'Max Mauro'
@@ -52,10 +57,8 @@ print(p.startswith('M'))
 print(p.endswith('o'))
 
 #docstrings
-#espécie de documentação que pode ser insserido em algum algum modulo, função ou classe...
-#não é interpretadoa como comando
+"""espécie de documentação que pode ser inserido em algum modulo, função ou classe...
+não é interpretadoa como comando, a não ser que atribua a uma variavel,"""
 
-texto = """" não use esse tipo comentários
-
-Docstring"""
-
+Frase = 'teste de logica de programaçao'
+print (Frase[0:5]) 

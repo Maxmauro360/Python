@@ -12,7 +12,7 @@
 
 # astros = ['Lua','Vênus','Lua','Marte','Lua']
 # print(astros, end='---')
-# astros_set = set(astros)
+# astros_set = set(astros) #nos conjuntos não terão valores duplicados
 # print(astros_set)
 
 astros1 = {'Lua','Vênus','Lua','Marte','Lua', 'Io'}

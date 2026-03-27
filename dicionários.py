@@ -8,6 +8,8 @@ dicionario = {
 print(f'elemento:  {dicionario['nome']}')
 print(f'elemento:  {dicionario['densidade']}')
 print(f'elemento:  {dicionario['grupo']}')
+dicionario['período'] = 3 # se colocar o nome de uma chave que já existe, ela será trocada, caso ela não existir, será criada.
+
 print(f'O dicionário possui {len(dicionario)} elementos')
 
 #Atualizar uma entrada
