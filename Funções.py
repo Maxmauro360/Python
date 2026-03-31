@@ -44,3 +44,27 @@ if __name__ == '__main__':
     resultados = quadrado(valores)
     for i in resultados:
       print(i)
+
+#parametros opcionais
+def contar (num= 7, caractere="+"):
+   for k in range(0,num):
+      print(caractere)
+#se adicionar 'print(num)' ele oscila entre caractere e numero
+
+if __name__ == "__main__":
+   contar(caractere=")") # se muda a variavel aqui, ela será modificada enquato execuçao da funçao
+
+
+
+def som_animalesco(som):
+    if(som== 'auau'):
+        return('é um cachorro')
+    elif(som == 'miau'):
+      return('é um gato')
+    elif (som =='quack'):
+      return('é um pato')
+    
+if __name__== '__main__':
+   animais = input('Digite o som do animal:').lower()
+   res= som_animalesco(animais)
+   print(res)
