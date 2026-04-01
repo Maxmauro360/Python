@@ -31,3 +31,15 @@ if __name__ == "__main__":
     for k in resultado:
         print(k)
 
+
+def musculação(treino):
+   if (treino == 'segunda'):
+    return('Dia de perna')
+    if(treino == 'terça'):
+        return('Dia de peito')
+    
+if __name__ =='__main__':
+    academia= input('Que dia é hoje?')
+    res = musculação(academia)
+    print(res)   
+    

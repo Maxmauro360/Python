@@ -68,3 +68,52 @@ if __name__== '__main__':
    animais = input('Digite o som do animal:').lower()
    res= som_animalesco(animais)
    print(res)
+
+
+
+def som_mult_exp(a, b, c):
+    if( a== 0):
+        return(a+b+c)
+    elif(b == 1):
+        return(a**c)
+    elif(c==1):
+     return(a*b*c)
+
+if __name__== '__main__':
+   res = som_mult_exp(0,2,3)
+   print(res)
+
+
+def quadrado(val):
+    quadrados = []
+    for k in val:
+        quadrados.append(k** 2)
+    return quadrados
+
+if __name__== '__main__':
+    valores=[2,3,4,5,6,7,8,9]
+    resultado = quadrado(valores)
+    for k in resultado:
+        print(k)
+
+#funçoes parametros
+def contar(num= 11, caractere= '+'):
+    for k in range(1,num):
+       print (caractere)
+if __name__=='__main__':
+    contar(caractere= '/') #se eu quiser mudar o parametro, terá de ser feio isso
+    #caso a funçao estiver em ordem, colocar o numero e depois outra função ex: (5,'*')
+
+x= 5
+y=3
+z= 1
+def soma_mult(x,y,z):
+   if(z== 0):
+      return x*z
+   else:
+      return (x+y+z)
+   
+if __name__=='__main__':
+    res4 = soma_mult(x, y, z) #a declaração da funçao, nao precisa ter as mesmas variaveis, os valores serao copiados
+    print(res4)
+
