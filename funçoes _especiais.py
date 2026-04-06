@@ -1,0 +1,1 @@
+#funções lambda (anônimas) não é definida previamente, voce cria e usa
