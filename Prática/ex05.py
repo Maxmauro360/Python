@@ -96,12 +96,59 @@ def tabuadas(a):
     if a == 0:
         return 'Multiplicação por 0 é 0'
     
+    lista = []
     for b in range (1,11):
-        print(f'{a} x {b} = {a*b}')
+       lista.append(f'{a} x {b} = {a*b}')
+
+    return lista
 if __name__== '__main__':
     while True:
-        a = int(input('Digite um numero:'))
-        break
-    print(tabuadas(a))
+        a = int(input('Digite um numero ou "-1" para sair:'))
+        if a== -1:
+            print('parou')
+            break
+        for linha in tabuadas(a):
+            print(linha)
 
+#nivel3 001
+def nomes(qdt):
+    lista=[]
+
+    for nome in range(qdt):
+        nome = input('Digite um nome:')
+        lista.append(nome)
+    return lista
+if __name__== '__main__':
+    print(nomes(6))
+
+#ex02
+    import random
+
+def numeros(qdt):
+    lista= []
+    for i in range(qdt):
+        n = random.randint(1,51)
+        lista.append(n)
+    return lista
+if __name__=='__main__':
+    print(numeros(6))
+
+#ex03
+
+lista =[]
+def palavras(qdt):
+     for nome in range(qdt):
+         nome= input('digite uma palavra: \n')
+         lista.append(nome)
+     for palavra in lista:
+         contador = 0
+         for letra in palavra:
+             if letra.lower() in 'aeiou':
+                contador +=1
+         print(f'A palavra "{palavra} tem "{contador}" vogais')
+     return lista
+
+if __name__=='__main__':
+     print(palavras(1))
     
+
