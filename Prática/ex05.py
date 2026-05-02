@@ -123,7 +123,6 @@ if __name__== '__main__':
 
 #ex02
     import random
-
 def numeros(qdt):
     lista= []
     for i in range(qdt):
@@ -131,7 +130,9 @@ def numeros(qdt):
         lista.append(n)
     return lista
 if __name__=='__main__':
-    print(numeros(6))
+    lista = numeros(6)
+    print(lista)
+    print(max(lista))
 
 #ex03
 
@@ -152,3 +153,156 @@ if __name__=='__main__':
      print(palavras(1))
     
 
+lista = []
+def contador_vogal(qdt):
+    for nome in range(qdt):
+        nome = input('Nome aqui:\n')
+        lista.append(nome)
+    for nome in lista:
+        contador =0
+        for vogal in nome:
+            if vogal.lower() in 'aeiou':
+                contador += 1
+        print(f'{nome} tem {contador} vogais')
+    return lista
+if __name__== '__main__':
+    print(contador_vogal(1))
+
+
+#ex04
+listinha= []
+def palavra_invertida(qtde):
+    for nome in range(qtde):
+        nome= input('Aqui:')
+        listinha.append(nome)
+    resultado=[]
+    for nome in listinha:
+        resultado.append(nome[::-1])
+    return resultado
+if __name__== '__main__':
+    print(palavra_invertida(1))
+
+
+
+
+
+guarda_roupa= []
+def armario(qdt):
+    for roupas in range(qdt):
+        roupas = input('O que tem?:')
+        guarda_roupa.append(roupas)
+
+    resultado= []
+    roupa_inversa=[]
+
+    for roupas in guarda_roupa:
+        vogais=0
+        for vogal in roupas:
+            if vogal.lower() in 'aeiou':
+                vogais += 1
+        resultado.append(f'{roupas} tem {vogais} vogais')
+        roupa_inversa.append(roupas[::-1])
+
+        return resultado, roupa_inversa
+if __name__== '__main__':
+    armario(3) 
+
+
+#nivel4 01
+lista=[]
+def matematica():
+    num1= int(input('Digite um numero aqui:'))
+    num2= int(input('Digite outro numero aqui:'))
+    operação = input('Digite a operação aqui (+,-,*,/):')
+    
+    match operação:
+        case '+':
+            res = num1 + num2
+        case '-':
+            res= num1 - num2
+        case '*':
+            res = num1* num2
+        case '/':
+            res= num1 / num2
+        case _:
+            return 'Operação inválida'
+    return res
+if __name__=='__main__':
+    print(matematica())
+
+#nivel5- Dicionarios, tuplas, sets..
+
+dicionario= [  
+    {  
+        'nome': 'Matheus',  
+        'idade':21,  
+        'escolaridade': 'Tecnico',
+    },
+    {
+        'nome': 'Max',
+        'idade':21,
+        'escolaridade': 'Tecnico',
+    },
+    {
+        'nome': 'julia',
+        'idade': 17,
+        'escolaridade': 'Ensino médio'
+    }
+]
+
+def cadastro(nome_busca):
+    for pessoa in dicionario:
+        if pessoa['nome'].lower() == nome_busca.lower():
+            return pessoa
+    return None
+
+if __name__== '__main__':
+    nome = int(input('Digite o nome:'))
+    resultado = cadastro(nome)
+    if resultado:
+        print(resultado)
+    else:
+        print('Pessoa não encontrada')
+
+      
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

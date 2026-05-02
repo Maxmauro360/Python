@@ -1,15 +1,20 @@
-lista =[]
-def palavras(qdt):
-     for nome in range(qdt):
-         nome= input('digite uma palavra: \n')
-         lista.append(nome)
-     for palavra in lista:
-         contador = 0
-         for letra in palavra:
-             if letra.lower() in 'aeiou':
-                contador +=1
-         print(f'A palavra "{palavra} tem "{contador}" vogais')
-     return lista
-
+lista=[]
+def matematica():
+    num1= int(input('Digite um numero aqui:'))
+    num2= int(input('Digite outro numero aqui:'))
+    operação = input('Digite a operação aqui (+,-,*,/):')
+    
+    match operação:
+        case '+':
+            res = num1 + num2
+        case '-':
+            res= num1 - num2
+        case '*':
+            res = num1* num2
+        case '/':
+            res= num1 / num2
+        case _:
+            return 'Operação inválida'
+    return res
 if __name__=='__main__':
-     print(palavras(1))
+    print(matematica())

@@ -11,7 +11,7 @@ print(f'Valor referente a ordem:\n{n3[4]}')
 #começa do 0
 print(f'Quantidade de valores: \n{len(n3)}') 
 
-print(f'Valores de tras para frente:\n{sorted(n3, reverse= True)}')
+print(f'Valores de decrescentes:\n{sorted(n3, reverse= True)}')
 
 print(f'valores somados: \n {sum(n3)}')
 
