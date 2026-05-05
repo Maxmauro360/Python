@@ -205,7 +205,7 @@ def armario(qdt):
 
         return resultado, roupa_inversa
 if __name__== '__main__':
-    armario(3) 
+    armario(2) 
 
 
 #nivel4 01
@@ -264,11 +264,69 @@ if __name__== '__main__':
     else:
         print('Pessoa não encontrada')
 
+
+
+
+
+
+listagem = [
+    {
+        'objeto': 'caneta',
+        'tamanho': 'pequeno',
+        'medida': 20
+    },
+    {
+        'objeto': 'caderno',
+        'tamanho': 'medio',
+        'medida': 30
+    },
+    {
+        'objeto': 'borracha',
+        'tamanho':'miuda',
+        'medida': 5
+    }   
+]
+
+def escola(material):
+    for utensilio in listagem:
+        if utensilio['objeto'].lower() == material.lower():
+            return utensilio
+    return None
+
+if __name__== '__main__':
+    objeto = input('Digite o nome:')
+    resultado = escola(objeto)
+    if resultado:
+        print(resultado)
+    else:
+        print('Objeto não encontrado')
+
       
     
+#nivel 5- contar letras unicas
 
-    
+def nomes():
+    lista = []
 
+    for i in range(3):
+        nome = input(f'Digite o {i+1}º nome:')
+        lista.append(nome)
+
+    return lista
+
+if __name__== '__main__':
+    lista_nomes= nomes()
+    total_letras = 0
+    total_vogais= 0
+
+    for nome in lista_nomes:
+        total_letras = len(nome)
+        for letra in nome.lower():
+            if letra in 'aeiou':
+                total_vogais += 1
+    print(f' nome: {nome}')
+    print(f'Total de letras: {total_letras}')
+    print(f'Quantidade de vogais: {total_vogais}')
     
         
 
