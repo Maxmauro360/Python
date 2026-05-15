@@ -203,9 +203,11 @@ def armario(qdt):
         resultado.append(f'{roupas} tem {vogais} vogais')
         roupa_inversa.append(roupas[::-1])
 
-        return resultado, roupa_inversa
+    return resultado, roupa_inversa
 if __name__== '__main__':
-    armario(2) 
+    resultado, roupa_inversa =armario(2) 
+    print(resultado)
+    print(roupa_inversa)
 
 
 #nivel4 01
@@ -257,7 +259,7 @@ def cadastro(nome_busca):
     return None
 
 if __name__== '__main__':
-    nome = int(input('Digite o nome:'))
+    nome = input('Digite o nome:')
     resultado = cadastro(nome)
     if resultado:
         print(resultado)
@@ -308,25 +310,184 @@ if __name__== '__main__':
 def nomes():
     lista = []
 
-    for i in range(3):
+    for i in range(2):
         nome = input(f'Digite o {i+1}º nome:')
         lista.append(nome)
 
-    return lista
-
-if __name__== '__main__':
-    lista_nomes= nomes()
-    total_letras = 0
     total_vogais= 0
+    resultado =[] #se prestar bastante atenção, está identado diretamente no def 'nomes()'
 
-    for nome in lista_nomes:
+    for nome in lista:
         total_letras = len(nome)
+
+        letras_unicas = set(nome.lower())
+
         for letra in nome.lower():
             if letra in 'aeiou':
                 total_vogais += 1
-    print(f' nome: {nome}')
-    print(f'Total de letras: {total_letras}')
-    print(f'Quantidade de vogais: {total_vogais}')
+    
+        resultado.append(f'Nome: {nome}')
+        resultado.append(f'Letras unicas: {letras_unicas}')
+        resultado.append(f'Total de letras: {total_letras}')
+        resultado.append(f'Quantidade de vogais: {total_vogais}')
+
+    return lista, resultado
+
+if __name__== '__main__':
+    resultados = nomes()
+    for item in resultados:
+        print(item)
+
+
+#nivel 5- criaçao de tuplas
+
+def localização ():
+
+    coordenadas= []
+    for i in range(2):
+        x= int(input(f'{i+1}ºDigite a abscissa aqui:'))
+        y= int(input(f'{i+1}ºDigite a ordenada aqui:'))
+        coordenadas.append((x,y))
+
+    coordenada_xy=[]
+
+    for x, y in coordenadas:
+        if x==y :
+            coordenada_xy.append(f'({x},{y}) são equidistantes')
+
+        else:
+            coordenada_xy.append(f'({x},{y}) não são equidistantes')
+    
+    return coordenada_xy
+
+if __name__== '__main__':
+    resultado = localização()
+    print(resultado)
+
+#jogo de adivinhação
+def adivinhaçao():
+    import random
+
+    escolhido = random.randint(1,51)
+    tentativas=[]
+
+    for i in range (5):
+            suposiçao = int(input(f'Digite o numero aqui: '))    
+            tentativas.append(suposiçao) 
+
+            if suposiçao > escolhido:
+                print('Numero alto')
+
+            elif suposiçao < escolhido:
+                print('Numero baixo')
+
+            if escolhido == suposiçao:
+                print(f'Você acertou!')
+                return escolhido, tentativas
+            
+            elif suposiçao > random.randint(1,51) or suposiçao < random.randint(1,51):
+                print('Passou das possibilidades')
+                    
+            else:
+                    print('Você errou, tente novamente!')
+   
+    return escolhido,tentativas
+
+if __name__== '__main__':
+    escolhido, tentativas = adivinhaçao()
+    print(f'O numero escolhido foi: {escolhido}')
+    print(f'As tentativas foram: {tentativas}')
+
+
+#cadastro bancario
+    contas =[]
+
+def criar_conta():
+    
+
+    for i in range():
+        usuario = input('Crie o usuario aqui: ')
+        senha = input ('Crie a senha aqui: ')
+
+        conta = {
+            'usuário': usuario,
+             'senha': senha,
+             'saldo': 0
+        }
+        contas.append(conta)
+
+        return 'Conta Criada!'
+    
+    def login():
+        usuario= input('Usuário: ')
+        senha = input('Senha: ')
+
+        for conta in contas:
+            usuario_salvo = conta[0]
+            senha_salva = conta[1]
+
+            if usuario == usuario_salvo and senha== senha_salva:
+                return 'Login realizado!'
+            
+                menu_banco(conta)
+            else:
+                return 'Usuário ou senha incorretos'
+            
+    def menu_banco(conta):
+
+        usuario = conta[0]
+        senha = conta[1]
+        saldo = conta[2]
+
+        while true:
+            print('1- Depositar')
+            print('2- Sacar')
+            print('3- Ver saldo')
+            print('4- Sair')
+
+            opçao= int(input('Acessar: ')) 
+
+            if opçao == '1':
+                valor = float(input('Valor do depósito: '))
+                saldo += valor
+
+                print(f'Seu saldo é de: {saldo}')
+
+            elif opçao== '2':
+                valor = float(input('Valor do saque: '))
+
+                if valor <= saldo:
+                    saldo -= valor
+
+                    print(f'Seu saldo é de: {saldo}')
+                else:
+                    return 'Saldo insuficente'
+                
+            elif opçao =='3':
+                print(f'Saldo: {saldo}')
+
+            elif opçao== '4':
+                return 'Saindo...'
+                break
+                
+            else:
+                return 'Opção inválida'
+            
+if __name__== '___main__':
+    resultado = criar_conta()
+    print(resultado)
+
+
+    
+            
+        
+        
+
+
+
+
+      
+
     
         
 
