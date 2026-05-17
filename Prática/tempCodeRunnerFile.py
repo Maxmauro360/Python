@@ -1,74 +1,50 @@
-def criar_conta():
-    
+def dobradinha():
+    lista_amiga= []
+    for i in range(3):
+        dobrar = int(input(f'Digite o {i+1}º numero: '))
+        lista_amiga.append(dobrar)
 
-    for i in range():
-        usuario = input('Crie o usuario aqui: ')
-        senha = input ('Crie a senha aqui: ')
+    while True:
+        print(f'1- Somente numeros pares')
+        print(f'2- Somente numeros dobrados')
+        print(f'3- Ver lista amiga')
+        print(f'4- Ver tudo')
+        print(f'5- Sair')
 
-        conta = {
-            'usuário': usuario,
-             'senha': senha,
-             'saldo': 0
-        }
-        contas.append(conta)
+        acessar = input('Escolha entre as alterantivas: ')
 
-        return 'Conta Criada!'
-    
-    def login():
-        usuario= input('Usuário: ')
-        senha = input('Senha: ')
+    match acessar:
+        case 1:
+            lista2=[]
+            for numero in lista_amiga:
+                if lambda lista_amiga: lista_amiga %2== 0:
+                   k= lista2.append(numero)
+                print(k)
 
-        for conta in contas:
-            usuario_salvo = conta[0]
-            senha_salva = conta[1]
-
-            if usuario == usuario_salvo and senha== senha_salva:
-                return 'Login realizado!'
+        case 2:
+            lista3=[]
+            l=map(lambda lista_amiga: lista_amiga * 2)
+            lista3.append(l)
+            print(f'Aqui estão os numeros dobrados: {l}')
             
-                menu_banco(conta)
+        case 3:
+            if (lista_amiga) == None:
+                print('Ainda não há numeros')
+
             else:
-                return 'Usuário ou senha incorretos'
+                return lista_amiga
+
+        case 4:
+            print(f'Aqui está {lista_amiga}, numeros pares{lista2} e numeros dobrados {lista3}') 
+
+        case 5:
+            return 'Saindo..'
+        
+        case _:
+            print('Operação invalida')
             
-    def menu_banco(conta):
+    return acessar
 
-        usuario = conta[0]
-        senha = conta[1]
-        saldo = conta[2]
-
-        while true:
-            print('1- Depositar')
-            print('2- Sacar')
-            print('3- Ver saldo')
-            print('4- Sair')
-
-            opçao= int(input('Acessar: ')) 
-
-            if opçao == '1':
-                valor = float(input('Valor do depósito: '))
-                saldo += valor
-
-                print(f'Seu saldo é de: {saldo}')
-
-            elif opçao== '2':
-                valor = float(input('Valor do saque: '))
-
-                if valor <= saldo:
-                    saldo -= valor
-
-                    print(f'Seu saldo é de: {saldo}')
-                else:
-                    return 'Saldo insuficente'
-                
-            elif opçao =='3':
-                print(f'Saldo: {saldo}')
-
-            elif opçao== '4':
-                return 'Saindo...'
-                break
-                
-            else:
-                return 'Opção inválida'
-            
-if __name__== '___main__':
-    resultado = criar_conta()
-    print(resultado)
+if __name__ == '__main__':
+    ex= dobradinha()
+    print(ex)

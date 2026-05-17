@@ -405,7 +405,7 @@ if __name__== '__main__':
 def criar_conta():
     
 
-    for i in range():
+    for i in range(1):
         usuario = input('Crie o usuario aqui: ')
         senha = input ('Crie a senha aqui: ')
 
@@ -418,65 +418,218 @@ def criar_conta():
 
         return 'Conta Criada!'
     
-    def login():
+def login():
         usuario= input('Usuário: ')
         senha = input('Senha: ')
 
         for conta in contas:
-            usuario_salvo = conta[0]
-            senha_salva = conta[1]
+            usuario_salvo = conta['usuário'] # Aqui foi preciso criar um parametro para conseguir comparar com o input
+            senha_salva = conta['senha']
 
             if usuario == usuario_salvo and senha== senha_salva:
-                return 'Login realizado!'
+                print('Login realizado!')
             
                 menu_banco(conta)
             else:
                 return 'Usuário ou senha incorretos'
             
-    def menu_banco(conta):
+def menu_banco(conta):
 
-        usuario = conta[0]
-        senha = conta[1]
-        saldo = conta[2]
+        usuario = conta['usuário']
+        senha = conta['senha']
+        saldo = conta['saldo']
 
-        while true:
+        while True:
             print('1- Depositar')
             print('2- Sacar')
             print('3- Ver saldo')
             print('4- Sair')
 
-            opçao= int(input('Acessar: ')) 
+            opçao= (input('Acessar: ')) 
 
             if opçao == '1':
                 valor = float(input('Valor do depósito: '))
-                saldo += valor
+                conta['saldo'] += valor
 
                 print(f'Seu saldo é de: {saldo}')
 
             elif opçao== '2':
                 valor = float(input('Valor do saque: '))
 
-                if valor <= saldo:
-                    saldo -= valor
+                if valor <= conta['saldo']:
+                    conta['saldo'] -= valor
 
-                    print(f'Seu saldo é de: {saldo}')
+                    print(f'Seu saldo é de: {conta['saldo']}')
                 else:
                     return 'Saldo insuficente'
                 
             elif opçao =='3':
-                print(f'Saldo: {saldo}')
+                print(f'Saldo: {conta['saldo']}')
 
             elif opçao== '4':
-                return 'Saindo...'
+                print('Saindo...')
                 break
                 
             else:
-                return 'Opção inválida'
+                print('Opção inválida')
             
-if __name__== '___main__':
+if __name__== '__main__':
     resultado = criar_conta()
     print(resultado)
 
+    acessar = login()
+    print(acessar)
+    
+#jokenpo
+
+def brincadeira():
+    import random
+    jokenpo= ['Pedra','Papel','Tesoura']
+    for i in jokenpo:
+        escolha = input('Escolha (Pedra, Papel ou Tesoura):').lower()
+
+        computador= random.choice(jokenpo)
+
+        print(f'Voce escolheu: {escolha}')
+        print(f'Computador escolheu: {computador}')
+        
+        if escolha == computador:
+            return 'Empate!'
+        
+        elif ((escolha == 'pedra' and computador == 'tesoura') or             
+             (escolha == 'tesoura' and computador == 'papel')or
+             (escolha == 'papel' and computador =='pedra')):
+            
+            return 'Você ganhou!'
+        else:
+            return 'Você perdeu!'
+        
+if __name__== '__main__':
+    brincar= brincadeira()
+    print(brincar)
+
+#nivel 9 - exceçoes
+    lista= []
+def div ():
+
+    
+    while True:
+
+        print(f'1-Dividir')
+        print(f'2-Ver lista')
+        print(f'3-Sair')
+
+        op= int(input('Escolha qual deseja acessar: '))
+
+        match op:
+            case 1:
+                dividir= divisao()
+                print(dividir)
+            
+            case 2:
+                print(lista)
+
+            case 3:
+                return 'Saindo do sistema...'
+            
+            case _:
+                print('Operação invalida')
+        
+def divisao(): #poderia usar 'lista' como parametro
+        try:
+            n1= int(input('digite um numero:'))
+            n2= int(input('digite outro para dividir numero:'))
+            resultado = round(n1/n2)      
+            lista.append(resultado)      
+        
+        except ValueError:
+            print(f'ocorreu um erro ao ler o valor. Tente novamente.')
+        
+        except ZeroDivisionError:
+            print(f'Não é possivel dividir por 0')
+        except:
+            print(f'Ocorreu um erro desconhecido...')
+        else:
+            print(f"{resultado:.0f}") #para numeros sem decimais
+        finally:            #bloco associado que sempre sera executado independente de ocorrer ou nao um errou 
+                            # o mais correto nesse caso seria usar o 'else:'
+            print (f'O resultado é: {resultado}')
+    
+        for i in lista:
+            i = n1
+            if n1 > 10:
+                print(f'Significante')
+            else:
+                print('Insignificante')
+                print(f'\n calculo finalizado!')
+
+if __name__== '__main__':
+    executar = div()
+    print(executar)
+
+#nivel 10- lambda,filter,map
+
+def dobradinha():
+    lista_amiga= []
+    for i in range(3):
+        dobrar = int(input(f'Digite o {i+1}º numero: '))
+        lista_amiga.append(dobrar)
+
+    while True:
+        print(f'1- Somente numeros pares')
+        print(f'2- Somente numeros dobrados')
+        print(f'3- Ver lista amiga')
+        print(f'4- Ver tudo')
+        print(f'5- Sair')
+
+        acessar = input('Escolha entre as alterantivas: ')
+
+    match acessar:
+        case 1:
+            lista2=[]
+            for numero in lista_amiga:
+                if lambda lista_amiga: lista_amiga %2== 0:
+                   k= lista2.append(numero)
+                print(k)
+
+        case 2:
+            lista3=[]
+            l=map(lambda lista_amiga: lista_amiga * 2)
+            lista3.append(l)
+            print(f'Aqui estão os numeros dobrados: {l}')
+            
+        case 3:
+            if (lista_amiga) == None:
+                print('Ainda não há numeros')
+
+            else:
+                return lista_amiga
+
+        case 4:
+            print(f'Aqui está {lista_amiga}, numeros pares{lista2} e numeros dobrados {lista3}') 
+
+        case 5:
+            return 'Saindo..'
+        
+        case _:
+            print('Operação invalida')
+            
+    return acessar
+
+if __name__ == '__main__':
+    ex= dobradinha()
+    print(ex)
+             
+        
+
+
+
+                    
+
+
+        
+        
+        
 
     
             
