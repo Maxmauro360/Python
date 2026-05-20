@@ -570,10 +570,25 @@ if __name__== '__main__':
 #nivel 10- lambda,filter,map
 
 def dobradinha():
+
     lista_amiga= []
+
+    def pares(lista): #o python ja compara o 'lista_amiga = lista, o valor l_a é enviado para o paramero lista'
+        lista2=[]
+        verificar= lambda x: x%2== 0
+        for numero in lista:
+            if verificar(numero):
+                lista2.append(numero)
+        return lista2
+
+    def dobrar(lista):
+        verificar2= map(lambda x: x*2, lista)
+        return list(verificar2)
+    
+
     for i in range(3):
-        dobrar = int(input(f'Digite o {i+1}º numero: '))
-        lista_amiga.append(dobrar)
+        numero = int(input(f'Digite o {i+1}º numero: ')) # A variavel não pode ter nome de funçao                                                                                                                                                                                                                                                                                                                                                   
+        lista_amiga.append(numero)
 
     while True:
         print(f'1- Somente numeros pares')
@@ -582,45 +597,77 @@ def dobradinha():
         print(f'4- Ver tudo')
         print(f'5- Sair')
 
-        acessar = input('Escolha entre as alterantivas: ')
+        acessar = int(input('Escolha entre as alterantivas: '))
 
-    match acessar:
-        case 1:
-            lista2=[]
-            for numero in lista_amiga:
-                if lambda lista_amiga: lista_amiga %2== 0:
-                   k= lista2.append(numero)
-                print(k)
+        match acessar:
+            case 1:
+                lista2=[]
+                for numero in lista_amiga:
+                    verificar = lambda x: x %2== 0
+                    if verificar(numero):
+                        lista2.append(numero)
+                        print(lista2)
+                    
 
-        case 2:
-            lista3=[]
-            l=map(lambda lista_amiga: lista_amiga * 2)
-            lista3.append(l)
-            print(f'Aqui estão os numeros dobrados: {l}')
+            case 2:
+                lista3=[]
+                l=map(lambda lista_amiga: lista_amiga * 2, lista_amiga)
+                lista3.append(list(l))
+                print(f'Aqui estão os numeros dobrados: {lista3}')
             
-        case 3:
-            if (lista_amiga) == None:
-                print('Ainda não há numeros')
+            case 3:
+                if len(lista_amiga) == 0:
+                    print('Ainda não há numeros')
 
-            else:
-                return lista_amiga
+                else:
+                    return lista_amiga
 
-        case 4:
-            print(f'Aqui está {lista_amiga}, numeros pares{lista2} e numeros dobrados {lista3}') 
+            case 4:
+                print(f'Aqui está {lista_amiga}, numeros pares{pares(lista_amiga)} e numeros dobrados {dobrar(lista_amiga)}') 
 
-        case 5:
-            return 'Saindo..'
+            case 5:
+                return 'Saindo..'
         
-        case _:
-            print('Operação invalida')
-            
-    return acessar
+            case _:
+                print('Operação invalida')
+
+        #(return acessar) com isso, encerra a funçao na primeira volta
 
 if __name__ == '__main__':
     ex= dobradinha()
-    print(ex)
-             
-        
+    print(ex) 
+
+
+def lista_vogais():
+    frase= 'Caia sete vezes, levante-se oito." Ensina sobre persistência e resíliência diante das adversidades dá vida.'
+    acentuadas =['a', 'e', 'i', 'o', 'u','á','ê','í']
+
+    palavras= []
+    vogais= []
+
+    total_frase = 0
+    total_vogais = 0
+    for i in frase.split():
+        total_frase +=1
+        palavras.append(i)
+
+        for v in i.lower():
+            if v in acentuadas:
+                total_vogais +=1
+                vogais.append(v)
+
+                
+    print(f'A frase possui: {total_frase} palavras')
+    print(f'A frase possui: {total_vogais} vogais')
+ 
+    return palavras, vogais
+
+if __name__== '__main__':
+    c = lista_vogais()
+    print(c)
+
+    
+
 
 
 

@@ -1,50 +1,27 @@
-def dobradinha():
-    lista_amiga= []
-    for i in range(3):
-        dobrar = int(input(f'Digite o {i+1}º numero: '))
-        lista_amiga.append(dobrar)
+def lista_vogais():
+    frase= 'Caia sete vezes, levante-se oito." Ensina sobre persistência e resíliência diante das adversidades dá vida.'
+    acentuadas =['a', 'e', 'i', 'o', 'u','á','ê','í']
 
-    while True:
-        print(f'1- Somente numeros pares')
-        print(f'2- Somente numeros dobrados')
-        print(f'3- Ver lista amiga')
-        print(f'4- Ver tudo')
-        print(f'5- Sair')
+    palavras= []
+    vogais= []
 
-        acessar = input('Escolha entre as alterantivas: ')
+    total_frase = 0
+    total_vogais = 0
+    for i in frase.split():
+        total_frase +=1
+        palavras.append(i)
 
-    match acessar:
-        case 1:
-            lista2=[]
-            for numero in lista_amiga:
-                if lambda lista_amiga: lista_amiga %2== 0:
-                   k= lista2.append(numero)
-                print(k)
+        for v in i.lower():
+            if v in acentuadas:
+                total_vogais +=1
+                vogais.append(v)
 
-        case 2:
-            lista3=[]
-            l=map(lambda lista_amiga: lista_amiga * 2)
-            lista3.append(l)
-            print(f'Aqui estão os numeros dobrados: {l}')
-            
-        case 3:
-            if (lista_amiga) == None:
-                print('Ainda não há numeros')
+                
+    print(f'A frase possui: {total_frase} palavras')
+    print(f'A frase possui: {total_vogais} vogais')
+ 
+    return palavras, vogais
 
-            else:
-                return lista_amiga
-
-        case 4:
-            print(f'Aqui está {lista_amiga}, numeros pares{lista2} e numeros dobrados {lista3}') 
-
-        case 5:
-            return 'Saindo..'
-        
-        case _:
-            print('Operação invalida')
-            
-    return acessar
-
-if __name__ == '__main__':
-    ex= dobradinha()
-    print(ex)
+if __name__== '__main__':
+    c = lista_vogais()
+    print(c)

@@ -53,7 +53,7 @@ numeros = [ 1,2,3,4,5,6,7,8]
 total = reduce(mult, numeros)
 print(total)
  
-#soma cumulativa dos quadrados de valores usando a expressao lambda
+#soma acumulativa dos quadrados de valores usando a expressao lambda
 numeros = [1,2,3,4,5,6]
 #((1**2 + 2**2)**2 +3**2)**2 +4**2
 total = reduce(lambda x,y: x**2 + y**2, numeros)
