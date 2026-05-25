@@ -1,27 +1,36 @@
-def lista_vogais():
-    frase= 'Caia sete vezes, levante-se oito." Ensina sobre persistência e resíliência diante das adversidades dá vida.'
-    acentuadas =['a', 'e', 'i', 'o', 'u','á','ê','í']
+def numeros():
 
-    palavras= []
-    vogais= []
+    lista= []
 
-    total_frase = 0
-    total_vogais = 0
-    for i in frase.split():
-        total_frase +=1
-        palavras.append(i)
+    numeros_pares= [] 
+    numeros= lambda x: x%2==0
+    
+    numeros_par3x = []
+    multiplicados = lambda y: y*3
+    
+    for i in range(1,6):
+        
+        digitados = int(input('Digite 5 numeros aqui: '))
+        
+        lista.append(digitados)
+        
+        for num in lista:
+        
+            if numeros(num):
+        
+                numeros_pares.append(num)
+        
+                print(f'Os numeros pares são: {numeros_pares}')
 
-        for v in i.lower():
-            if v in acentuadas:
-                total_vogais +=1
-                vogais.append(v)
+            elif multiplicados(numeros_par3x):
 
-                
-    print(f'A frase possui: {total_frase} palavras')
-    print(f'A frase possui: {total_vogais} vogais')
- 
-    return palavras, vogais
+                numeros_par3x.append(num)
 
+                print(f'Os numeros triplicados ficam: {numeros_par3x}')
+        
+    return lista, numeros_pares
+    
 if __name__== '__main__':
-    c = lista_vogais()
-    print(c)
+    lista, numeros_pares = numeros()
+    print(f'Lista completa: {lista}')
+    print(f'Números pares: {numeros_pares}')
