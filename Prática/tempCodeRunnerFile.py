@@ -1,36 +1,12 @@
-def numeros():
+def lista ():
 
-    lista= []
+    lis = [1,2,3,4,5,6,7,8,9]
 
-    numeros_pares= [] 
-    numeros= lambda x: x%2==0
-    
-    numeros_par3x = []
-    multiplicados = lambda y: y*3
-    
-    for i in range(1,6):
-        
-        digitados = int(input('Digite 5 numeros aqui: '))
-        
-        lista.append(digitados)
-        
-        for num in lista:
-        
-            if numeros(num):
-        
-                numeros_pares.append(num)
-        
-                print(f'Os numeros pares são: {numeros_pares}')
+    resultado = [x**2 for x in lis if x % 2 == 0]
 
-            elif multiplicados(numeros_par3x):
-
-                numeros_par3x.append(num)
-
-                print(f'Os numeros triplicados ficam: {numeros_par3x}')
-        
-    return lista, numeros_pares
-    
+    return lis, resultado
 if __name__== '__main__':
-    lista, numeros_pares = numeros()
-    print(f'Lista completa: {lista}')
-    print(f'Números pares: {numeros_pares}')
+    lis, resultado = lista()      
+    print(lis)
+    print(resultado)
+        

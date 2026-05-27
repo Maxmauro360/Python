@@ -1,13 +1,7 @@
-import os
-textoo= input(f'Digite algumas frutas')
-try:
-    lista = []
-    lista.append(textoo)
-    os.chdir(r'C:\\Users\\Mauro\\Documents\\Github\\Diretorio') 
-    with open('frutas.txt', 'a', encoding='utf-8') as arquivo:
-            arquivo.write(textoo)
+from functools import reduce
 
-    print(f'Texto salvo com sucesso!')
-        
-except IOError:
-    print('Tente novamente')
+def mult (x,y):
+    return x*y
+numeros = [ 1,2,3,4,5,6,7,8]
+total = reduce(mult, numeros)
+print(total)

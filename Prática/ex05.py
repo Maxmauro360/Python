@@ -685,46 +685,82 @@ def numeros():
         
         lista.append(digitados)
         
-        for num in lista:
         
-            if numeros(num):
+        if numeros(digitados):
         
-                numeros_pares.append(num)
-        
-                print(f'Os numeros pares são: {numeros_pares}')
+         numeros_pares.append(digitados)
+            
 
-            elif multiplicados(numeros_par3x):
+        else:
+            multiplicados(numeros_par3x)
 
-                numeros_par3x.append(num)
+            numeros_par3x.append(multiplicados(digitados))
 
-                print(f'Os numeros triplicados ficam: {numeros_par3x}')
+    print(f'Lista completa: {lista}')
+
+    #print(f'Números pares: {numeros_pares}')
+    print(f'Números pares: {pares}')
+
+    print(f'Os numeros triplicados ficam: {numeros_par3x}')
         
     return lista, numeros_pares
     
 if __name__== '__main__':
     lista, numeros_pares = numeros()
-    print(f'Lista completa: {lista}')
-    print(f'Números pares: {numeros_pares}')
 
+#ex02
+def numeros():
+    digitados=[]
 
- 
- 
- 
-os.getcwd()
+    for i in range(5):
 
+        lista= int(input('Digite 5 numeros aqui: '))
+        
+        digitados.append(lista)
+
+    numeros_pares= list(filter(lambda x: x%2 == 0, digitados))       
+    numeros_triplicados= list(map(lambda k: k*3, digitados))    
+
+    print(f'Os numeros digitados foram: {digitados}')    
+    print(f'Os numeros pares são: {numeros_pares}')    
+    print(f'Os numeros triplicados foram: {numeros_triplicados}')  
+
+    return digitados, numeros_pares, numeros_triplicados
+
+if __name__=='__main__':
+    numeros()  
     
 
 
 
+#reduce()
+from functools import reduce 
+
+def funçao(x,y):
+    return x + y
+lista = [2,4,6,8,10]
+
+total =reduce(funçao, lista)
+print(f'O resultado é: {total}')
+print(f'O maior valor da lista é: {max(lista)}')
 
                     
 
+#list comprehension
+def lista ():
 
-        
-        
+    lis = [1,2,3,4,5,6,7,8,9]
+
+    resultado = [x**2 for x in lis if x % 2 == 0]
+
+    return lis, resultado
+if __name__== '__main__':
+    lis, resultado = lista()      
+    print(lis)
+    print(resultado)
         
 
-    
+#POO- praticagem
             
         
         
