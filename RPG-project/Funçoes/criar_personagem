@@ -1,0 +1,82 @@
+jogador_1 = change()
+,jogador_2 = change()
+    
+        while jogador_1 == jogador_2:
+
+            print('Escolha outro personagem!')
+
+            jogador_2= change()
+
+        
+        
+        match jogador_1: 
+
+                case 1: 
+                    if jogador_1 ==1:
+
+
+                        personagem1 = Druida('Malfurion') 
+
+                    print('Você escolheu Druida') 
+
+                case 2: 
+                    if jogador_1 ==2:
+
+                        personagem1= Paladino('Arthur') 
+
+                    print('Você escolheu Paladino') 
+
+                case 3: 
+                    if jogador_1 ==3:
+                    
+                        personagem1 = Mago('Guldan') 
+
+                    print('Você escolheu Mago!') 
+
+                case 4:
+            
+                    print('Saindo..') 
+
+                    exit()
+
+                case _: 
+
+                    print('Opçao invalida')
+
+        
+        match jogador_2: 
+
+                case 1: 
+                    
+                    if jogador_2 ==1:
+                    
+                        personagem2 = Druida('Malfurion') 
+
+                    print('Você escolheu Druida') 
+
+                case 2: 
+                    
+                    if jogador_2 ==2:
+
+                        personagem2 = Paladino('Arthur') 
+
+                    print('Você escolheu Paladino') 
+
+                case 3: 
+                    if jogador_2 ==3:
+
+                        personagem2 = Mago('Guldan') 
+
+                    print('Você escolheu Mago!') 
+
+                case 4:
+            
+                    print('Saindo..') 
+
+                    exit()
+
+                case _: 
+
+                    print('Opçao invalida')
+
+print('Combate iniciado!')
