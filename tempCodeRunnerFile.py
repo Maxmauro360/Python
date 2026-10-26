@@ -1,7 +1,9 @@
-from functools import reduce
+def quad_par():
+    lista= []
+    qp= [x**2 for x in range(1,11)]
+    lista.append(qp)
+    return qp
 
-def mult (x,y):
-    return x*y
-numeros = [ 1,2,3,4,5,6,7,8]
-total = reduce(mult, numeros)
-print(total)
+if  __name__=='__main__':
+    k= quad_par()
+    print(k)

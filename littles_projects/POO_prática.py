@@ -397,18 +397,12 @@ meu_dog.fazer_barulho()
 
 
 
-
-
-
-
-
-
-
-
-
-
-            
-
+def gerador():
+    for i in range(2,20,3): 
+        print(i)
+        
+if __name__ == '__main__':
+    gerador()
 
 
 

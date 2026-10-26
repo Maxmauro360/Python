@@ -43,3 +43,28 @@ if __name__ =='__main__':
     res = musculação(academia)
     print(res)   
     
+
+
+from collections import deque
+
+class Fila:
+    def __init__(self):
+        self._elementos = deque()
+
+    def adicionar(self, elemento):
+        self._elementos.append(elemento)
+
+    def remover(self):
+        return self._elementos.popleft()
+
+    def __len__(self):
+        return len(self._elementos)
+
+
+fila = Fila()
+
+fila.adicionar("Pedido 1")
+fila.adicionar("Pedido 2")
+
+print(fila.remove())
+print(len(fila))

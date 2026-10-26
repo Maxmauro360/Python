@@ -57,8 +57,28 @@ if __name__== '__main__':
 
 #criar uma lista de numeros pares 
 def pares ():
-    pares= [num for num in range(1201) if num %2==0]
-    return pares
+    paress= [num for num in range(1201) if num %2==0]
+    return paress
 if __name__=='__main__':
     k = pares()
+    print(k)
+
+
+#ex01
+def lista():
+    numeros = [x for x in range(0,70,7) if x%2==0]
+    return numeros
+
+if __name__== '__main__':
+    k= lista()
+    print(k)
+
+def quad_par():
+    lista= []
+    qp= [x**2 for x in range(1,11)]
+    lista.append(qp)
+    return qp
+
+if  __name__=='__main__':
+    k= quad_par()
     print(k)

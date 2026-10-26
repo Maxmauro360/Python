@@ -1,5 +1,5 @@
 jogador_1 = change()
-,jogador_2 = change()
+jogador_2 = change()
     
         while jogador_1 == jogador_2:
 
