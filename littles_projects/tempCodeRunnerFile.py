@@ -1,36 +1,46 @@
 from collections import deque
 
-class Clientes():
 
-    def __init__(self):
-        self.fila = deque()
-        self.clientes_comuns= deque()
-        self.clientes_prioritarios= deque()
-        self.contador = 0
+def change():
+    while True:
+        try:
+            print(f'1-Criar conta')
+            print(f'2-Depositar dinheiro')
+            print(f'3-Sacar dinheiro')
+            print(f'4-Ver saldo')
+            print(f'5-Sair')
 
-    def adicionar_cliente(self, nome):
-        self.contador += 1
+            changee= int(input(f'choose one of the options next:'))
 
-        if self.contador<= 3:
-            self.adicionar_Preferencial(nome)
-        else:
-            self.adicionar_Comum(nome)
-         
-    def adicionar_Preferencial(self, nome):
-            self.clientes_prioritarios(nome)
-            self.fila.append(nome)
-            print(f'{nome} adicionado a fila prioritária')
+            if 1<= changee <= 5:
+                return changee
 
-    def adicionar_Comum(self,nome):
-            self.clientes_comuns(nome)
-            self.fila.append(nome)
-            print(f'{nome} adicionado à fila comum')
+            else:
+                print('Digite uma opção de 1 a 5')
 
-clientes= Clientes()
-for i in range(1,7):
-    nome = input(f'Digite o nome do {i}º cliente:')
-    clientes.adicionar_cliente(nome)
+        except ValueError: #captura caso o usuaria digite letras ou simbolos
+            print(f'Digite uma das opções válidas')
+        
+            break
 
-print(f'\n lista dos preferenciais: {clientes.clientes_prioritarios}')
-print(f'\n lista dos comuns: {clientes.clientes_comuns}')
-print(f'\n lista total: {clientes.fila}')
+    
+
+escolha = change()
+dados = deque()
+
+match escolha:
+    case 1:
+        if escolha == 1:
+            nome= input('Digite seu nome completo: \n')
+            cidade = input('Digite sua cidade: \n')
+            renda= input('Digite sua renda: \n')
+
+            usuario = {
+                "nome": nome,
+                "cidade": cidade,
+                "renda": renda
+            }
+
+            dados.append(usuario)
+
+            print(f'Dados salvos com sucesso! {dados}')

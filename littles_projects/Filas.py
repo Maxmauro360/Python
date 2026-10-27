@@ -101,10 +101,10 @@ print(f'\n lista dos preferenciais: {clientes.clientes_prioritarios}')
 print(f'\n lista dos comuns: {clientes.clientes_comuns}')
 print(f'\n lista total: {clientes.fila}')
 
+
 #ex04- Simulador de banco
 
 from collections import deque
-
 
 def change():
     while True:
@@ -117,7 +117,7 @@ def change():
 
             changee= int(input(f'choose one of the options next:'))
 
-            if 1<= change <= 5:
+            if 1<= changee <= 5:
                 return changee
 
             else:
@@ -125,27 +125,7 @@ def change():
 
         except ValueError: #captura caso o usuaria digite letras ou simbolos
             print(f'Digite uma das opções válidas')
-        
-        break
-
     
-
-escolha = change()
-dados = deque()
-
-match escolha:
-    case 1:
-        if escolha == 1:
-            informaçao= input('Digite seu nome completo: \n')
-            informaçao = input('Digite sua cidade: \n')
-            informaçao= input('Digite sua renda: \n')
-            informaçao.append(dados)
-
-    case 2:
-        if escolha == 2:
-
-            print(Banco())
-
 class Clientes:
 
     def __init__(self):
@@ -177,8 +157,41 @@ class Clientes:
 
         print(f'{nome} adicionado com sucesso')
 
-while fila:
-    input(f'Digite o nome do usuário ou conta do banco para acessar')
+escolha = change()
+dados = deque()
+gerenciador= Clientes()
 
+match escolha:
+    case 1:
+        if escolha == 1:
+            nome= input('Digite seu nome completo: \n')
+            cidade= input('Digite sua cidade: \n')
+            renda= int(input('Digite sua renda: \n'))
+
+            usuario = {
+                "nome": nome,
+                "cidade": cidade,
+                "renda": renda
+            }
+
+            dados.append(usuario)
+
+            print(f'Dados salvos com sucesso! {dados}')
+
+            if renda >= 7000:
+                usuario.adicionar_preferencial(gerenciador)
+
+            else:
+                usuario.adicionar_comum(gerenciador)
+
+#não confundir objeto(gerenciador) com método(.adicionar_preferencial).
+#gerenciador: é o objeto criado a partir da classe Clientes. Gerencia as filas de clientes
+#.adicionar_preferencial(): é o método responsável por colocar o cliente na fila prioritária. Solicita cadastrar o cliente na fila prioritária
+#usuario: é o dicionário que contém nome, cidade e renda. Armazena os dados do cliente
+
+    case 2:
+        if escolha == 2:
+
+            print(Banco())
 
 class Banco:
