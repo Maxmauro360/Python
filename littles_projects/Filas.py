@@ -259,4 +259,8 @@ while True:
         case 5:
             print('Saindo do sistema...')
             break
-            
+
+
+import pip
+
+print(dir(random))
