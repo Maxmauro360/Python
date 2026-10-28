@@ -260,7 +260,3 @@ while True:
             print('Saindo do sistema...')
             break
 
-
-import pip
-
-print(dir(random))
