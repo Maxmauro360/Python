@@ -177,11 +177,11 @@ def palavra_invertida(qtde):
         listinha.append(nome)
     resultado=[]
     for nome in listinha:
-        resultado.append(nome[::-1])
+       # resultado.append(nome[::-1])
+        resultado.append(nome(inverse()))
     return resultado
 if __name__== '__main__':
     print(palavra_invertida(1))
-
 
 
 
@@ -760,7 +760,13 @@ if __name__== '__main__':
     print(resultado)
         
 
-#POO- praticagem
+a = [1,2,3,4,5]
+b = [7,8,9,0,1]
+c= []
+for first, second in zip(a,b):
+    c.append(first + second)
+
+print(c)
             
         
         

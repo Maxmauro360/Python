@@ -407,8 +407,36 @@ if __name__ == '__main__':
 
 
 
+import requests, pprint
 
 
+api_key = '7d536fc724ec4a0389670626262910'
+url = 'http://api.weatherapi.com/v1/current.json'
+
+parametros = {
+    "key": api_key,
+    "q": "Rio de janeiro",
+    "lang": "br"
+}
+
+#os parametros são necessarios pegar na documentação do site
+# voce só conseguira acessar a api depois que colocar a key e outros parametros obrigatorios
+
+
+
+res=requests.get(url, params= parametros)
+#res=requests.get(url, params= parametros)
+#dados = res.json()                        # tambem poderá ser feito desta forma
+#print(dados)
+print(res.content)
+print(res.status_code)
+
+if res.status_code== 200:   #verifica o status do codigo
+    print(res.json())           #acessa os parametros necessarios
+    pprint.pprint(res.json())   #acessa os parametros de forma mais clara
+
+    temp = res.json()["current"]["temp_c"]
+    print(temp)
 
 
     

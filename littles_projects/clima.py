@@ -19,7 +19,6 @@ class Clima():
                     "count": 1,
                     "countryCode": "br"
                 }
-               
                 respostas = requests.get(URL, params=parametros)
                 if respostas.status_code == 200:
                     dados_aquisiçao = respostas.json()
@@ -78,3 +77,101 @@ if __name__== '__main__':
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import requests,pprint
+from collections import deque
+
+class Clima():
+    dados= deque()
+
+    def __init__(self):
+        while True:
+            try:
+                cidade =input('Digite aqui sua cidade: \n')
+                estado =input('Digite aqui seu estado:\n')
+                parametros={
+                    "name": cidade,
+                    "count": 1,
+                    "countrycode": "br"
+                }
+                URL = 'https://geocoding-api.open-meteo.com/v1/search'
+
+                res = requests.get(URL, params= parametros)
+
+                infor = res.json()
+
+                pprint.pprint(infor)
+
+                dicionario= {
+                    "cidade": cidade,
+                    "estado": estado,
+                     "temperatura":None
+                }
+                self.dados.append(dicionario)
+                
+                parametros_2= {
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "current": "temperature_2m, weather_code",
+                    "timezone": "America/Sao_Paulo"
+                }
+                self.dados.append()
+
+                sair = input("Digite 's' para sair")
+
+                if sair.lower() == 's':
+                    break
+
+            except Exception as erro:
+
+                print(f'encontramos um erro, {erro}')
+
+if __name__ == '__main__':
+    clima = Clima()
+    print(clima)
+
+        
+
+
+a = [1,2,3,4,5]
+b = [7,8,9,0,1]
+c= []
+for first, second in zip(a,b):
+    c.append(first + second)
+
+print(c)

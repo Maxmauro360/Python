@@ -19,10 +19,10 @@ class Clima():
                     "count": 1,
                     "countryCode": "br"
                 }
-               
                 respostas = requests.get(URL, params=parametros)
                 if respostas.status_code == 200:
                     dados_aquisiçao = respostas.json()
+                    pprint.pprint(dados_aquisiçao.values())
 
                     if dados_aquisiçao.get("results"):
                         latitude = dados_aquisiçao["results"][0]["latitude"]
@@ -40,6 +40,7 @@ class Clima():
 
                         if respostas_2.status_code == 200:
                             dados_aquisiçao_2 = respostas_2.json()
+                            pprint.pprint(dados_aquisiçao_2)
                             temperatura= dados_aquisiçao_2["current"]["temperature_2m"]
                             previsao = dados_aquisiçao_2["current"]["weather_code"]
                         #   pprint.pprint(dados_aquisiçao)
@@ -70,4 +71,3 @@ class Clima():
 if __name__== '__main__':
     programa = Clima()
     programa.tempo()
-
